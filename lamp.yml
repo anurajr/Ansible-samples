@@ -1,8 +1,9 @@
 ---
 
   - name : LAMP
+    hosts: all
     tasks: 
-  - name: LAMp
+  - name: Installing Packages
     yum:
       name={{ item }}
       state=latest
