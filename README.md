@@ -1,1 +1,0 @@
-# lamp.yml
