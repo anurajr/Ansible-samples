@@ -1,10 +1,8 @@
 ---
-- hosts: webservers
-  become: yes
-  vars:
-     my_name: 'Anuraj'
-  tasks: 
-  - name: LAMP INSTALLER
+
+  - name : LAMP
+    tasks: 
+  - name: LAMp
     yum:
       name={{ item }}
       state=latest
