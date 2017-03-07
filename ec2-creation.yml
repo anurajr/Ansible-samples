@@ -1,0 +1,26 @@
+- hosts: localhost
+  connection: local
+  gather_facts: False
+  vars_prompt:
+    instance_name:
+
+
+  tasks:
+
+  - name: CREATING AWS INSTANCE
+    ec2:
+     aws_access_key: 
+     aws_secret_key: 
+     region: ap-southeast-1
+     key_name: myawskey
+     instance_type: t2.micro
+     group: myawsconsole-WebServerSecurityGroup-1JTXHYHHIJ22R
+     image: ami-2c95344f
+     wait: true
+     exact_count: 1
+     count_tag:
+         Name={{ instance_name }}
+     instance_tags:
+         Name={{ instance_name }}
+
+    register: ec2
